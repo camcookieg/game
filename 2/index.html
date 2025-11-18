@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Camcookie Games - Home</title>
+  <title>Camcookie Games - Paddle and Ball</title>
   <style>
     body {
       font-family: sans-serif;
@@ -68,13 +68,31 @@
       border-top-right-radius: 10px;
       padding: 3px;
     }
-
   </style>
 </head>
 <body>
 <div class="Topbar"><h1><a class="Topbarlink" href="https://camcookie876.github.io/games/">Home</a> | <a class="Topbarlink" href="https://camcookie876.github.io/games/list/">Game List</a></h1></div>
-<h1 class="header">Home</h1>
+<h1 class="header">Paddle and Ball</h1>
+<div class="iframe-wrapper">
+  <iframe id="gameFrame" src="https://camcookie876.github.io/games/gamecode/2/" title="Game" class="content"></iframe>
+  <div class="Bottombar">
+    <button class="fullscreen-btn" onclick="goFullscreen()">Fullscreen</button>
+  </div>
+</div>
 
+<script>
+  function goFullscreen() {
+    const iframe = document.getElementById("gameFrame");
+    if (iframe.requestFullscreen) {
+      iframe.requestFullscreen();
+    } else if (iframe.webkitRequestFullscreen) { // Safari
+      iframe.webkitRequestFullscreen();
+    } else if (iframe.msRequestFullscreen) { // IE/Edge
+      iframe.msRequestFullscreen();
+    }
+  }
+</script>
+<br>
 <div class="down">
   <br>
   <p>Copyright 2025 by Camcookie</p>
