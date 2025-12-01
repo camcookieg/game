@@ -2,20 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Camcookie Games - Shape Catch</title>
+  <title>Camcookie Games - Home</title>
   <style>
     body {
       font-family: sans-serif;
     }
 .iframe-wrapper {
-  width: 100%;
+  width: auto;
   border: solid #ff0000;
   border-radius: 10px;
-  height: auto;
 }
-.content {
-  width: 100%;
-}
+
 .Bottombar {
   width: 100%;
   height: 40px;
@@ -71,31 +68,61 @@
       border-top-right-radius: 10px;
       padding: 5px;
     }
+.square-grid {
+  display: flex;
+  flex-wrap: wrap;              /* wrap only when needed */
+  gap: 12px;
+  padding: 16px;
+}
+
+.square-grid a {
+  width: 120px;
+  aspect-ratio: 1 / 1;          /* keeps square shape */
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  color: #e6f0ff;
+  background: #0099ff;
+  border: 1px solid #000fff;
+  border-radius: 12px;
+  font-family: ui-rounded, system-ui, -apple-system, Segoe UI, Roboto;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.2;
+  box-shadow: 0 6px 16px rgba(0,0,0,.25);
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.square-grid a:hover,
+.square-grid a:focus-visible {
+  transform: translateY(-2px);
+  border-color: #6ee7ff;
+  box-shadow: 0 10px 24px rgba(110,231,255,.25);
+  outline: none;
+}
+
+/* Optional: shrink tiles on smaller screens */
+@media (max-width: 560px) {
+  .square-grid a {
+    width: 96px;
+  }
+}
+@media (max-width: 380px) {
+  .square-grid a {
+    width: 84px;
+  }
+}
   </style>
 </head>
 <body>
 <div class="Topbar"><h1><a class="Topbarlink" href="https://camcookieg.github.io/game/">Home</a> | <a class="Topbarlink" href="https://camcookie876.github.io/game/list/">Game List</a></h1></div>
-<h1 class="header">Shape Catch</h1>
-<div class="iframe-wrapper">
-  <iframe id="gameFrame" src="https://camcookieg.github.io/game/gamecode/1/w/" title="Game" class="content"></iframe>
-  <div class="Bottombar">
-    <button class="fullscreen-btn" onclick="goFullscreen()">Fullscreen</button>
-  </div>
+<h1 class="header">Game List</h1>
+<div class="square-grid">
+  <a class="square" href="https://camcookieg.github.io/game/1"><span>Shape Catch</span></a>
+  <a class="square" href="https://camcookieg.github.io/game/2"><span>Paddle and Ball</span></a>
+  
+  <!-- Add more squares as needed -->
 </div>
-
-<script>
-  function goFullscreen() {
-    const iframe = document.getElementById("gameFrame");
-    if (iframe.requestFullscreen) {
-      iframe.requestFullscreen();
-    } else if (iframe.webkitRequestFullscreen) { // Safari
-      iframe.webkitRequestFullscreen();
-    } else if (iframe.msRequestFullscreen) { // IE/Edge
-      iframe.msRequestFullscreen();
-    }
-  }
-</script>
-<br>
 <div class="down">
   <p>Copyright 2025 by Camcookie</p>
 </div>
